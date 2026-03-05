@@ -3,6 +3,23 @@ package com.uws.designpatterns.creational.singleton;
 import java.util.ArrayList;
 
 
+/*
+ * DatabaseManager is a Singleton class responsible for retrieving
+ * products from a simulated database source.
+ *
+ * The Singleton pattern is used here to ensure that only one instance
+ * of the DatabaseManager exists throughout the application.
+ *
+ * It implements the Strategy interface, meaning it provides a specific
+ * strategy for retrieving product data (in this case from a database).
+ *
+ * The getProductsList() method returns a simulated list of products
+ * representing items fetched from a database.
+ */
+
+
+
+
 public class DatabaseManager implements Strategy 
 {
    

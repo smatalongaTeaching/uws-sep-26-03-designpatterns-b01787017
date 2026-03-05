@@ -6,7 +6,7 @@ The **Abstract Factory pattern** is a creational design pattern that provides an
 
 The client interacts only with **abstract interfaces**, while the concrete factories decide which specific objects are created.
 
-Source: Refactoring Guru – https://refactoring.guru/design-patterns/abstract-factory
+Source: Refactoring Guru – <https://refactoring.guru/design-patterns/abstract-factory>
 
 ---
 

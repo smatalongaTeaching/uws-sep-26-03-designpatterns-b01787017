@@ -1,5 +1,21 @@
 package com.uws.designpatterns.creational.singleton;
 
+
+/*
+ * Product represents a simple data model for items that can be purchased.
+ *
+ * Each product has:
+ * - an ID
+ * - a name
+ * - a price
+ *
+ * Objects of this class are created by the different strategies
+ * (NetworkManager and DatabaseManager) when generating product lists.
+ */
+
+
+
+
 public class Product 
 {
     private int id;

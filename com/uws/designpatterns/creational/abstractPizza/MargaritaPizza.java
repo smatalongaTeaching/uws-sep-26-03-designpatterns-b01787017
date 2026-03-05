@@ -21,5 +21,10 @@ public class MargaritaPizza extends Pizza {
     public void cut() {
         System.out.println("Cutting Margarita Pizza into 8 slices.");
     }
+    
+    @Override
+    public void ship() {
+         System.out.println("Shipping Margarita Pizza with care.");
+    }
 
 }

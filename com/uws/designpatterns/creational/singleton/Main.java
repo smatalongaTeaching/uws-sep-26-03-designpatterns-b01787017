@@ -3,6 +3,24 @@ package com.uws.designpatterns.creational.singleton;
 import java.util.ArrayList;
 
 
+/*
+ * Main acts as the client for the application and demonstrates
+ * how the system works.
+ *
+ * It first checks internet connectivity using a random value.
+ * Based on the connectivity result, the ShoppingApp selects
+ * the appropriate strategy to retrieve products.
+ *
+ * The list of products returned from the selected strategy
+ * is then printed to the console.
+ *
+ * This class shows how the Singleton (ShoppingApp) and
+ * Strategy patterns work together in the application.
+ */
+
+
+
+
 public class Main {
 
     //Mimicking connectivity checking using a random variable

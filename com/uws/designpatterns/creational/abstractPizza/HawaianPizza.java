@@ -22,4 +22,9 @@ public class HawaianPizza extends Pizza {
         System.out.println("Cutting Hawaian Pizza into 8 slices.");
     }
 
+        @Override
+    public void ship() {
+         System.out.println("Shipping Hawaian Pizza with care.");
+    }
+
 }
