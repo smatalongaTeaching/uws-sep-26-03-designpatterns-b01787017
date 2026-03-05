@@ -13,6 +13,16 @@ import java.util.Comparator;
  * - It requires casting from Object to Animal
  * - Strategy logic is tightly coupled inside one class
  */
+
+/*
+ * Reviewed Design pattern in Gamma, Erich. Design patterns : elements of reusable object-oriented software. Reading, Mass: Addison-Wesley, 1995. 
+ * Current implementation loosely follows the Strategy pattern
+ * by providing different comparison behaviours.
+ * However the strategies are implemented using anonymous inner classes,
+ * making the design difficult to extend or reuse.
+ */
+
+
 public class SortingAnimals {
     
 
@@ -48,7 +58,7 @@ public class SortingAnimals {
         }
     };
     
-    
+
     // Strategy for comparing animals alphabetically by species name
     public final Comparator speciesStrategyFunc = new Comparator() {
 
