@@ -37,3 +37,10 @@ interface GUIFactory {
     Button createButton();
     Checkbox createCheckbox();
 }
+
+
+Exercise 2D - Can you identify the implementations of the AbstractFactory design pattern?
+
+The code contains elements similar to a factory pattern, particularly the pizzaFactory() method inside PizzaOrder, which decides which pizza object to instantiate.
+
+However, the code does not fully implement the Abstract Factory pattern because there is no abstract factory interface and it only creates a single type of product (Pizza). Instead, it more closely resembles a Simple Factory implementation where a method selects which concrete class to instantiate based on input.
