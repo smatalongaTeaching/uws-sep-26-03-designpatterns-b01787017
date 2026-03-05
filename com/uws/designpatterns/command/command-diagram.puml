@@ -1,0 +1,53 @@
+@startuml
+package com.uws.designpatterns.command {
+
+  interface Command {
+    +execute(): void
+  }
+
+  class RemoteControl <<Invoker>> {
+    -command: Command
+    +setCommand(command: Command): void
+    +pressButton(): void
+  }
+
+  class Light <<Receiver>> {
+    -on: boolean
+    +switchOn(): void
+    +switchOff(): void
+  }
+
+  class LightsOnCommand <<ConcreteCommand>> {
+    -light: Light
+    +LightsOnCommand(light: Light)
+    +execute(): void
+  }
+
+  class LightsOffCommand <<ConcreteCommand>> {
+    -light: Light
+    +LightsOffCommand(light: Light)
+    +execute(): void
+  }
+
+  class Client {
+    +main(args: String[]): void
+  }
+
+  RemoteControl o-- Command
+  LightsOnCommand ..|> Command
+  LightsOffCommand ..|> Command
+  LightsOnCommand --> Light
+  LightsOffCommand --> Light
+  Client --> RemoteControl
+  Client --> Light
+  Client --> LightsOnCommand
+  Client --> LightsOffCommand
+}
+@enduml
+
+'
+' How to view this diagram:
+' 1. Open this file in Visual Studio Code.
+' 2. Ensure the "PlantUML" extension is installed.
+' 3. Press ALT + D to preview the diagram.
+'
