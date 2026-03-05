@@ -1,0 +1,65 @@
+@startuml
+
+package com.uws.designpatterns.creational.abstractPizza {
+
+  class Pizza {
+    +prepare(): void
+    +bake(): void
+    +cut(): void
+    +box(): void
+  }
+
+  class MargaritaPizza {
+    +prepare(): void
+    +bake(): void
+    +cut(): void
+    +box(): void
+  }
+
+  class HawaianPizza {
+    +prepare(): void
+    +bake(): void
+    +cut(): void
+    +box(): void
+  }
+
+  class PepperoniPizza {
+    +prepare(): void
+    +bake(): void
+    +cut(): void
+    +box(): void
+  }
+
+  class PizzaOrder {
+    +{static} orderPizza(type: String): Pizza
+    -{static} pizzaFactory(type: String): Pizza
+  }
+
+  class PizzaOrderTest {
+    +testPizzaFactoryReturnsMargaritaPizza(): void
+    +testPizzaFactoryReturnsHawaianPizza(): void
+    +testPizzaFactoryReturnsPepperoniPizza(): void
+    +testPizzaFactoryReturnsNullForUnknownType(): void
+  }
+
+  MargaritaPizza --|> Pizza
+  HawaianPizza --|> Pizza
+  PepperoniPizza --|> Pizza
+
+  PizzaOrder ..> Pizza : creates/returns
+  PizzaOrder ..> MargaritaPizza : instantiates
+  PizzaOrder ..> HawaianPizza : instantiates
+  PizzaOrder ..> PepperoniPizza : instantiates
+
+  PizzaOrderTest ..> PizzaOrder : tests
+
+}
+
+@enduml
+
+'
+' How to view this diagram:
+' 1. Open this file in Visual Studio Code.
+' 2. Ensure the "PlantUML" extension is installed.
+' 3. Press ALT + D to preview the diagram.
+'
