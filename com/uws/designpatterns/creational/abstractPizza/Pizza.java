@@ -23,4 +23,9 @@ public class Pizza
         {
             System.out.println("Cutting.."); 
         }
+
+        public void ship()
+        {
+            System.out.println("Shipping..");
+        }
 }

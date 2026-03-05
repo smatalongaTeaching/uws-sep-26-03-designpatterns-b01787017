@@ -30,6 +30,7 @@ public class PizzaOrder {
             newPizza.bake();
             newPizza.cut();
             newPizza.box();
+            newPizza.ship();
 
             return newPizza;
         }
