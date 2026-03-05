@@ -29,6 +29,13 @@ class PizzaOrderTest {
         assertEquals(PepperoniPizza.class, pizza.getClass());
     }
 
+    @Test
+    void testPizzaFactoryReturnsVeggiePizza() throws Exception {
+        Pizza pizza = PizzaOrder.orderPizza("Veggie");
+        assertNotNull(pizza);
+        assertEquals(VeggiePizza.class, pizza.getClass());
+    }
+
 // currently causes a NullPointerException (factory returns null, then prepare() is called on null).
 
     @Test

@@ -48,7 +48,13 @@ public class PizzaOrder {
             else if (type.equals("Pepperoni"))
             {
                 pizza = new PepperoniPizza();
+
             }
+            else if (type.equals("Veggie"))
+            {
+                pizza = new VeggiePizza();
+            }
+
             else {
                 pizza = null;
             }
