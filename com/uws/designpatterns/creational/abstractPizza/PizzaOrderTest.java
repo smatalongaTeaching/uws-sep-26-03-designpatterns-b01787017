@@ -29,6 +29,8 @@ class PizzaOrderTest {
         assertEquals(PepperoniPizza.class, pizza.getClass());
     }
 
+// currently causes a NullPointerException (factory returns null, then prepare() is called on null).
+
     @Test
     void testPizzaFactoryReturnsNullForUnknownType() throws Exception {
         Pizza pizza = PizzaOrder.orderPizza("Unknown");
