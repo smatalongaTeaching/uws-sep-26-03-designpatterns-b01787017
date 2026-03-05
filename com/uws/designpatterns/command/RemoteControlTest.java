@@ -26,15 +26,43 @@ public class RemoteControlTest {
         control = new RemoteControl();
     }
     
+
+
+
     @Test
     public void testLightSwitchingOnAndOff() {
-       Assertions.fail("Not implemented");
 
+        // Set the command to lights on and press the button
+        control.setCommand(lightsOnCommand);
+        control.pressButton();
+
+        // Set the command to lights off and press the button
+        control.setCommand(lightsOffCommand);
+        control.pressButton();
+
+        // Verify that the execute method was called on both commands
+        // First we expect the lights on command to execute
+        // Then we expect the lights off command to execute
+        verify(lightsOnCommand, times(1)).execute();
+        verify(lightsOffCommand, times(1)).execute();
     }
     
+
+
     @Test
     public void testMultiplePressesOnSameCommand() {
-       Assertions.fail("Not implemented");
 
+        // Set the command to lights on and press the button multiple times
+        control.setCommand(lightsOnCommand);
+        control.pressButton();
+        control.pressButton();
+        control.pressButton();
+
+        // Verify that the execute method was called three times on the lights on command
+        // we expect the lights on command to execute three times 
+        verify(lightsOnCommand, times(3)).execute();
     }
+
+
+
 }
