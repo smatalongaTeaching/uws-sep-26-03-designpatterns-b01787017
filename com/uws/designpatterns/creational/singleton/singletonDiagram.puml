@@ -1,0 +1,69 @@
+@startuml
+
+package "com.uws.designpatterns.creational.singleton" {
+
+interface Strategy {
+    +getProductsList(): ArrayList<Product>
+}
+
+class ShoppingApp {
+    -strategy : Strategy
+    -static obj : ShoppingApp
+    -ShoppingApp()
+    +getInstance() : ShoppingApp
+    +doShopping(connectivity : boolean) : ArrayList<Product>
+}
+
+class NetworkManager {
+    -static obj : NetworkManager
+    -NetworkManager()
+    +getInstance() : NetworkManager
+    +getProductsList() : ArrayList<Product>
+}
+
+class DatabaseManager {
+    -static obj : DatabaseManager
+    -DatabaseManager()
+    +getInstance() : DatabaseManager
+    +getProductsList() : ArrayList<Product>
+}
+
+class Product {
+    -id : int
+    -name : String
+    -price : int
+    +Product(i:int, n:String, p:int)
+    +getId() : int
+    +getName() : String
+    +getPrice() : int
+}
+
+class Main {
+    +checkAccessibility() : boolean
+    +main(args:String[]) : void
+}
+
+}
+
+NetworkManager ..|> Strategy
+DatabaseManager ..|> Strategy
+
+ShoppingApp --> Strategy : uses
+ShoppingApp ..> NetworkManager : selects
+ShoppingApp ..> DatabaseManager : selects
+
+NetworkManager --> Product : creates
+DatabaseManager --> Product : creates
+
+Main --> ShoppingApp : uses
+
+@enduml
+
+
+
+'
+' How to view this diagram:
+' 1. Open this file in Visual Studio Code.
+' 2. Ensure the "PlantUML" extension is installed.
+' 3. Press ALT + D to preview the diagram.
+'
